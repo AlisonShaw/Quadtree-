@@ -39,9 +39,12 @@ void makeChildren(Node *parent)
 
 void growTree(Node *parent)
 {
+    //如果parent为空 返回
     if(parent==NULL) return ;
+    //如果是叶节点 ，创建子节点
     if(parent->child[0]==NULL)
         makeChildren(parent);
+    //否则对它的子节点调用此函数
     else {
         growTree(parent->child[0]);
         growTree(parent->child[1]);
